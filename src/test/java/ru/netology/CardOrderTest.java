@@ -43,7 +43,7 @@ public class CardOrderTest {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Александра Чернова");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79201793885");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
-        driver.findElement(By.tagName("button")).click();
+        driver.findElement(By.tagName("button__content")).click();
         String expected ="Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
         assertEquals(expected, actual);
