@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CardOrderTest {
+class CardOrderTest {
+
     WebDriver driver;
 
     @BeforeAll
@@ -23,7 +23,7 @@ public class CardOrderTest {
     }
 
     @BeforeEach
-    void setUp() {
+    void setup() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -32,9 +32,8 @@ public class CardOrderTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void teardown() {
         driver.quit();
-        driver = null;
     }
 
     @Test
